@@ -4,53 +4,48 @@
 
 
 
-
-
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font: 'Roboto', sans-serif;
 
-/// Code (monospace) font family
+/// Titles font family
 /// @type List
-$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
-
-
-
+$title-font: 'Shrikhand', cursive;
 
 
 /// Copy text color
 /// @type Color
-$text-color: rgb(34, 34, 34) !default;
+$text-color: rgb(0, 0, 0);
 
-/// Main brand color
+/// Secundary text color
 /// @type Color
-$brand-color: rgb(229, 0, 80) !default;
+$secundary-text-color: rgb(255, 255, 255);
 
-/// Light grey
+/// Main background color
 /// @type Color
-$light-grey: rgb(237, 237, 237) !default;
+$main-background-color: rgb(246, 246, 246);
 
-/// Medium grey
+/// Secondary background color
 /// @type Color
-$mid-grey: rgb(153, 153, 153) !default;
+$secundary-background-color: rgb(53, 53, 53);
 
-/// Dark grey
+/// Main highlight
 /// @type Color
-$dark-grey: rgb(68, 68, 68) !default;
+$main-highlight: rgb(147, 86, 220);
+
+/// Secundary highlight
+/// @type Color
+$secundary-highlight: rgb(153, 226, 208);
 
 
 
-
-
-/// Container's maximum width
+/* Container's max width
 /// @type Length
-$max-width: 1180px !default;
+$max-width: 768px; */
 
 
 
-
-
-/// Breakpoints map
+/// Breakpoints map > A REVOIR POUR COMPRENDRE
 /// @prop {String} keys - Keys are identifiers mapped to a given length
 /// @prop {Map} values - Values are actual breakpoints expressed in pixels
 $breakpoints: (
@@ -64,8 +59,8 @@ $breakpoints: (
 
 
 
-/// Relative or absolute URL where all assets are served from
+/* Relative or absolute URL where all assets are served from > A REVOIR POUR COMPRENDRE
 /// @type String
 /// @example scss - When using a CDN
 ///   $base-url: 'https://cdn.example.com/assets/';
-$base-url: '/assets/' !default;
+$base-url: '/assets/' !default; */

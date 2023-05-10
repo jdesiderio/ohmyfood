@@ -21,15 +21,45 @@ html {
   box-sizing: inherit;
 }
 
+
+body {
+  color: $text-color;
+  font-family: $text-font;
+  margin: 0;
+}
+
+
+/** Text and titles **/
+
+p {
+  font-weight: 500;
+}
+
+h1, h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0;
+}
+
+h2 {
+  padding: 50px 0 0 20px;
+}
+
+h3, h4 {
+  font-size: 18px;
+}
+
+h4 {
+  color: $secundary-text-color;
+  font-family: $title-font;
+}
+
+
 /**
  * Basic styles for links
  */
 a {
-  color: $brand-color;
+  color: $text-color;
   text-decoration: none;
-
-  @include on-event {
-    color: $text-color;
-    text-decoration: underline;
-  }
+  font-weight: 500;
 }

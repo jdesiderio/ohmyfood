@@ -1,0 +1,23 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the "new" badge component.
+// -----------------------------------------------------------------------------
+
+.newtag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  height: 29px;
+  background-color: $secundary-highlight;
+  margin:auto; 
+  right: 20px; 
+  top:20px; 
+  position: absolute; 
+  border-radius: 2px;
+  .newtag__txt {
+    color: #008766;
+    font-size: 14px;
+  }
+}

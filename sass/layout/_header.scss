@@ -1,3 +1,29 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.header__place {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #EAEAEA;
+  padding: 20px;
+  p {
+    margin:0;
+    padding-left: 15px;
+    color: $secundary-background-color;
+  }
+}

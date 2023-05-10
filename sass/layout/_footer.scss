@@ -1,3 +1,49 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the footer of the site/application.
 // -----------------------------------------------------------------------------
+.footer {
+  background-color: $secundary-background-color;
+  .footer__info {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    box-sizing: border-box;
+    padding-top: 22px;
+    padding-left: 25px;
+  }
+}
+
+.info__logo {
+  font-style: $title-font;
+  color: $secundary-text-color;
+  padding: 0;
+  margin: 0;
+}
+
+.info__list {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 16px;
+  .list__unit{
+    margin-bottom: 7px;
+    .list__links {
+    color: $secundary-text-color;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    &--txt {
+      margin: 0;
+      padding-left: 10px;
+      padding-right: 5px;
+      }
+    }
+  }
+}
+
+.fa-handshake-angle {
+  margin-top: 9px;
+}
+
+.list__linkslight{
+  font-weight: 400;
+}

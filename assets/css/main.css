@@ -1,0 +1,301 @@
+/* Container's max width
+/// @type Length
+$max-width: 768px; */
+/* Relative or absolute URL where all assets are served from > A REVOIR POUR COMPRENDRE
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'https://cdn.example.com/assets/';
+$base-url: '/assets/' !default; */
+/* 2. Vendors
+@use
+  'vendors/normalize'; */
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  color: rgb(0, 0, 0);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+/** Text and titles **/
+p {
+  font-weight: 500;
+}
+
+h1, h2 {
+  font-weight: 700;
+  font-size: 24px;
+  margin: 0;
+}
+
+h2 {
+  padding: 50px 0 0 20px;
+}
+
+h3, h4 {
+  font-size: 18px;
+}
+
+h4 {
+  color: rgb(255, 255, 255);
+  font-family: "Shrikhand", cursive;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__logo {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.header__place {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #EAEAEA;
+  padding: 20px;
+}
+.header__place p {
+  margin: 0;
+  padding-left: 15px;
+  color: rgb(53, 53, 53);
+}
+
+.footer {
+  background-color: rgb(53, 53, 53);
+}
+.footer .footer__info {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  box-sizing: border-box;
+  padding-top: 22px;
+  padding-left: 25px;
+}
+
+.info__logo {
+  font-style: "Shrikhand", cursive;
+  color: rgb(255, 255, 255);
+  padding: 0;
+  margin: 0;
+}
+
+.info__list {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 16px;
+}
+.info__list .list__unit {
+  margin-bottom: 7px;
+}
+.info__list .list__unit .list__links {
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.info__list .list__unit .list__links--txt {
+  margin: 0;
+  padding-left: 10px;
+  padding-right: 5px;
+}
+
+.fa-handshake-angle {
+  margin-top: 9px;
+}
+
+.list__linkslight {
+  font-weight: 400;
+}
+
+.hero, .restaurants {
+  background-color: rgb(246, 246, 246);
+}
+
+.hero, .how-to, .restaurants {
+  padding-bottom: 50px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero .hero__title {
+  padding: 30px 75px 15px 75px;
+  text-align: center;
+}
+.hero .hero__subtitle {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 300;
+  padding: 0 30px 15px 30px;
+  margin: 0;
+}
+
+.how-to__container {
+  margin: 25px 20px 0 20px;
+}
+
+.how-to__box {
+  display: flex;
+  flex-direction: row;
+  margin: 25px 0;
+}
+.how-to__box--nb {
+  color: rgb(246, 246, 246);
+  background-color: rgb(147, 86, 220);
+  padding: 10px 15px;
+  border-radius: 50%;
+  z-index: 1;
+  margin-right: -10px;
+}
+.how-to__box .how-to__box--txt {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  background-color: rgb(246, 246, 246);
+  width: 320px;
+  height: 72px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+.how-to__box .how-to__box--txt i {
+  margin-left: 20px;
+}
+.how-to__box .how-to__box--txt p {
+  padding-left: 15px;
+}
+
+.fa-mobile-screen-button, .fa-list-ul {
+  color: #7E7E7E;
+}
+
+.fa-store {
+  color: rgb(147, 86, 220);
+}
+
+.btn {
+  color: rgb(246, 246, 246);
+  background: rgb(147, 86, 220);
+  background: linear-gradient(353deg, rgb(147, 86, 220) 43%, rgb(255, 121, 218) 100%);
+  padding: 15px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+.newtag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  height: 29px;
+  background-color: rgb(153, 226, 208);
+  margin: auto;
+  right: 20px;
+  top: 20px;
+  position: absolute;
+  border-radius: 2px;
+}
+.newtag .newtag__txt {
+  color: #008766;
+  font-size: 14px;
+}
+
+.restaurant-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0;
+  padding: 15px;
+}
+.restaurant-cards .restaurant-cards__links {
+  width: 100%;
+}
+
+.restaurant-cards__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0;
+  margin-top: 15px;
+}
+.restaurant-cards__card .card__img {
+  position: relative;
+}
+.restaurant-cards__card .card__img img {
+  width: 100%;
+  height: 174px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  margin-top: 0px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card__card-content {
+  padding: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-sizing: border-box;
+  height: 77px;
+  background-color: white;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+}
+
+.card-content__card-txt .card-txt__card-title {
+  padding-bottom: 5px;
+  margin: 0;
+}
+.card-content__card-txt .card-txt__card-subtitle {
+  padding: 0;
+  margin: 0;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+/* 7. Themes
+@use
+  'themes/default'; *//*# sourceMappingURL=main.css.map */
