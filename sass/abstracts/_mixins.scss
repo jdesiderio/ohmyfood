@@ -1,3 +1,8 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
+
+@mixin reset-list {
+  padding-left: 0;
+  list-style: none;
+}

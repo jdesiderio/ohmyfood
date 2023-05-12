@@ -4,63 +4,26 @@
 
 
 
-/// Regular font family
-/// @type List
+// font family
 $text-font: 'Roboto', sans-serif;
-
-/// Titles font family
-/// @type List
 $title-font: 'Shrikhand', cursive;
 
 
-/// Copy text color
-/// @type Color
+// colors
 $text-color: rgb(0, 0, 0);
-
-/// Secundary text color
-/// @type Color
 $secundary-text-color: rgb(255, 255, 255);
-
-/// Main background color
-/// @type Color
 $main-background-color: rgb(246, 246, 246);
-
-/// Secondary background color
-/// @type Color
 $secundary-background-color: rgb(53, 53, 53);
-
-/// Main highlight
-/// @type Color
 $main-highlight: rgb(147, 86, 220);
-
-/// Secundary highlight
-/// @type Color
 $secundary-highlight: rgb(153, 226, 208);
 
+// Container's max width
+$max-width: 1440px;
 
+// Breakpoints
+$breakpoint-medium: 768px;
+$breakpoint-large: 1024px;
 
-/* Container's max width
-/// @type Length
-$max-width: 768px; */
+// Shadow
+$shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
 
-
-
-/// Breakpoints map > A REVOIR POUR COMPRENDRE
-/// @prop {String} keys - Keys are identifiers mapped to a given length
-/// @prop {Map} values - Values are actual breakpoints expressed in pixels
-$breakpoints: (
-  'small': 320px,
-  'medium': 768px,
-  'large': 1024px,
-) !default;
-
-
-
-
-
-
-/* Relative or absolute URL where all assets are served from > A REVOIR POUR COMPRENDRE
-/// @type String
-/// @example scss - When using a CDN
-///   $base-url: 'https://cdn.example.com/assets/';
-$base-url: '/assets/' !default; */

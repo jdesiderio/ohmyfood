@@ -5,11 +5,17 @@
 .header {
   display: flex;
   flex-direction: column;
+  &__back {
+    position: relative;
+    top: 45px;
+    left: 20px;
+  }
+  &__logo {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
 }
 
-.header__logo {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-}
+
 
