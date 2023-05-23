@@ -120,7 +120,7 @@ a {
   margin-top: 9px;
 }
 
-.list__linkslight {
+.list__links--light {
   font-weight: 400;
 }
 
@@ -305,14 +305,14 @@ a {
   z-index: 1;
 }
 
-.header__place {
+.location {
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: #EAEAEA;
   padding: 20px;
 }
-.header__place p {
+.location p {
   margin: 0;
   padding-left: 15px;
   color: rgb(53, 53, 53);

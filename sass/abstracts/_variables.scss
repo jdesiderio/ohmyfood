@@ -3,11 +3,9 @@
 // -----------------------------------------------------------------------------
 
 
-
 // font family
 $text-font: 'Roboto', sans-serif;
 $title-font: 'Shrikhand', cursive;
-
 
 // colors
 $text-color: rgb(0, 0, 0);
@@ -15,15 +13,28 @@ $secundary-text-color: rgb(255, 255, 255);
 $main-background-color: rgb(246, 246, 246);
 $secundary-background-color: rgb(53, 53, 53);
 $main-highlight: rgb(147, 86, 220);
-$secundary-highlight: rgb(153, 226, 208);
+$secundary-highlight: rgb(255,121,218);
+$tertiary-highlight: rgb(153, 226, 208);
 
-// Container's max width
+// opacity
+$amount: 5%;
+
+// shadow
+$shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+
+// container's max width
 $max-width: 1440px;
 
-// Breakpoints
+// breakpoints
 $breakpoint-medium: 768px;
 $breakpoint-large: 1024px;
 
-// Shadow
-$shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+// animations
+$loader-dur: 3000ms;
+$spin-dur: 700ms;
+$loader-delay: 150ms;
 
+$appear-dur: 500ms;
+$first-delay:150ms;
+$second-delay: $appear-dur + $first-delay + 50ms;
+$third-delay: $appear-dur*2 + $first-delay + 50ms;

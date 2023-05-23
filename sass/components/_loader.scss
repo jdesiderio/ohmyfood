@@ -1,0 +1,24 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the loader.
+// -----------------------------------------------------------------------------
+
+.loader {
+  position: absolute;
+  background: $main-background-color;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader $loader-dur $loader-delay both;
+  &--spin {
+    border: 25px solid $secundary-highlight;
+    border-radius: 50%;
+    border-top: 32px solid $main-highlight ;
+    width: 150px;
+    height: 150px;
+    animation: spin $spin-dur linear $loader-delay infinite both;
+  } 
+}

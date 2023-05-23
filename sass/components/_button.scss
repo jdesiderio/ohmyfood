@@ -4,12 +4,40 @@
 
 .btn {
   color: $main-background-color;
-  background: $main-highlight;
-  background: linear-gradient(353deg, rgba(147,86,220,1) 43%, rgba(255,121,218,1) 100%);
+  background: linear-gradient(353deg, $main-highlight 43%, $secundary-highlight 100%);
   padding: 15px 20px;
   margin-top: 10px;
   border: none;
   border-radius: 25px;  
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  min-width: 180px;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  &:hover {
+    &::after {
+      opacity: 1;
+      }
+    }
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;  
+    left: 0;
+    background: linear-gradient(353deg, lighten($main-highlight, $amount) 43%, lighten($secundary-highlight, $amount) 100%);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    z-index: -1;
+    border-radius: 25px;  
+    transition: opacity 250ms;
+    }
+}
+
+.btn-order {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
 }

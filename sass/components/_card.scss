@@ -1,5 +1,5 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the card component.
+// This file contains all styles related to the restaurant cards component.
 // -----------------------------------------------------------------------------
 
 
@@ -37,26 +37,28 @@
   }
 }
 
-  .card__card-content {
-    padding: 25px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 77px;
-    background-color: white;
-    align-items: center;
-    border-radius: 0 0 20px 20px;
+.card__card-content {
+  padding: 25px;
+  display: flex;
+  justify-content: space-between;
+  height: 77px;
+  background-color: white;
+  align-items: center;
+  border-radius: 0 0 20px 20px;
+  .card-content__card-txt {
+    .card-txt__card-title {
+      padding-bottom: 5px;
+      margin: 0;
+    }
+    .card-txt__card-subtitle {
+      padding: 0;
+      margin: 0;
+      font-size: 17px;
+      font-weight: 300;
+    }
   }
-
-.card-content__card-txt {
-  .card-txt__card-title {
-    padding-bottom: 5px;
-    margin: 0;
-  }
-  .card-txt__card-subtitle {
-    padding: 0;
-    margin: 0;
-    font-size: 17px;
-    font-weight: 300;
+  .heart {
+    margin: 0 25px 25px 0;
   }
 }
+

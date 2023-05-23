@@ -1,0 +1,60 @@
+/* Anim LOADER */
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.9;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Anim FADE IN */
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* LIKE > DELETE QUAND l'AUTRE fonctionne
+
+.fa-heart1 {
+  margin-top: 7px;
+  &:hover {
+    animation: fill 800ms ease-in-out;
+    background: -webkit-linear-gradient($secundary-highlight, $main-highlight);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    font-weight: bold;
+  }
+}
+
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+
+

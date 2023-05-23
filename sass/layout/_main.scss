@@ -1,14 +1,13 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the main division of the site/application.
+// This file contains all styles related to the main division of the site (Restaurant pages).
 // -----------------------------------------------------------------------------
 
-.hero-restaurant{
+/* Background */
   .hero-img {
     width: 100%;
     height: 275px;
     object-fit: cover;
   }
-}
 
 .menu {
   background-color: $main-background-color;
@@ -20,10 +19,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  @media (min-width: $breakpoint-medium) {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
   @media (min-width: $breakpoint-large) {
     margin-left: 200px;
     margin-right: 200px;
@@ -32,20 +27,20 @@
   }
 }
 
+/* Titles */
 .restaurant-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 25px;
-  margin-right: 20px;;
+  padding: 25px 40px 0 25px;
   &__txt {
     margin: 0;
     padding: 0;
     font-family: $title-font;
     font-size: 28px;
   }
-  .fa-heart {
-    margin-top: 18px;
+  .heart {
+    margin-top: 5px;
   }
   @media (min-width: $breakpoint-medium) {
     justify-content: center;
@@ -65,38 +60,76 @@
   padding: 0;
   margin-bottom: 15px;
   width: 40px;
-  border-bottom: solid 3px $secundary-highlight;
+  border-bottom: solid 3px $tertiary-highlight;
 }
 
+/* Dishes Cards */
 .menu__card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: $secundary-text-color;
-    height: 72px;
-    border-radius: 15px;
-    box-shadow: $shadow;
-    padding: 0 15px;
-    margin-top: 10px; 
+  display: flex;
+  justify-content: space-between;
+  background-color: $secundary-text-color;
+  height: 72px;
+  border-radius: 15px;
+  box-shadow: $shadow;
+  margin-top: 10px; 
+  &--food {
+    padding: 15px;
+    width: 80%;
     .menu__card-title {
+      padding-bottom: 5px;
+      margin: 0;
       font-weight: 500;
     }
-    .menu__sub-price {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      .menu__card-subtitle {
-        font-size: 15px;
-      }
-      .menu__sub-price--price {
-        margin: 0;
-        padding: 0;
-      }
+    .menu__card-subtitle {
+      font-size: 15px;
+      padding-top: 0;
+      margin: 0;
+      font-weight: 300;
     }
   }
-
-.btn-order {
-  display: flex;
-  justify-content: center;
-  margin: 40px;
+  &--price {
+    padding-top: 25px;
+    padding-right: 10px;
+  }
+  &--chose { 
+    display: block;
+    transition-property: all;      
+    transition-duration: 1000ms;
+    .fa-circle-check {
+      display: none;
+      color: $secundary-text-color;
+    }
+  }
+  &:hover {
+    .menu__card--chose {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 72px;
+      padding: 25px;
+      border-radius: 0 15px 15px 0;
+      background-color: $tertiary-highlight;
+      transform: translateX(0);
+      .fa-circle-check {
+        display: block;
+      }
+    }  
+  }
 }
+
+/* Fade In menu */ 
+
+.menu__first {
+  animation: fadein $appear-dur ease-in $first-delay both;
+}
+
+.menu__secund {
+  animation: fadein $appear-dur ease-in $second-delay both;
+}
+
+.menu__third {
+  animation: fadein $appear-dur ease-in $third-delay both;
+}
+
+

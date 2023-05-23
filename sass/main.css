@@ -31,7 +31,6 @@ body {
 .main-container {
   display: flex;
   flex-direction: column;
-  max-width: 1440px;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -70,6 +69,59 @@ a {
   font-weight: 500;
 }
 
+/* Anim LOADER */
+@keyframes loader {
+  0% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 0.9;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* Anim FADE IN */
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* LIKE > DELETE QUAND l'AUTRE fonctionne
+
+.fa-heart1 {
+  margin-top: 7px;
+  &:hover {
+    animation: fill 800ms ease-in-out;
+    background: -webkit-linear-gradient($secundary-highlight, $main-highlight);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    font-weight: bold;
+  }
+}
+
+@keyframes fill {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
 .header {
   display: flex;
   flex-direction: column;
@@ -152,21 +204,20 @@ a {
   flex-direction: row;
   justify-content: flex-start;
 }
+.info__list .list__unit .list__links .fa-handshake-angle {
+  margin-top: 9px;
+}
 .info__list .list__unit .list__links--txt {
   margin: 0;
   padding-left: 10px;
   padding-right: 5px;
 }
-
-.fa-handshake-angle {
-  margin-top: 9px;
-}
-
-.list__linkslight {
+.info__list .list__unit .list__links--light {
   font-weight: 400;
 }
 
-.hero-restaurant .hero-img {
+/* Background */
+.hero-img {
   width: 100%;
   height: 275px;
   -o-object-fit: cover;
@@ -184,12 +235,6 @@ a {
   flex-direction: column;
   justify-content: center;
 }
-@media (min-width: 768px) {
-  .menu {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-}
 @media (min-width: 1024px) {
   .menu {
     margin-left: 200px;
@@ -199,12 +244,12 @@ a {
   }
 }
 
+/* Titles */
 .restaurant-title {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding-top: 25px;
-  margin-right: 20px;
+  padding: 25px 40px 0 25px;
 }
 .restaurant-title__txt {
   margin: 0;
@@ -212,8 +257,8 @@ a {
   font-family: "Shrikhand", cursive;
   font-size: 28px;
 }
-.restaurant-title .fa-heart {
-  margin-top: 18px;
+.restaurant-title .heart {
+  margin-top: 5px;
 }
 @media (min-width: 768px) {
   .restaurant-title {
@@ -237,42 +282,74 @@ a {
   border-bottom: solid 3px rgb(153, 226, 208);
 }
 
+/* Dishes Cards */
 .menu__card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   background-color: rgb(255, 255, 255);
   height: 72px;
   border-radius: 15px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
-  padding: 0 15px;
   margin-top: 10px;
 }
-.menu__card .menu__card-title {
+.menu__card--food {
+  padding: 15px;
+  width: 80%;
+}
+.menu__card--food .menu__card-title {
+  padding-bottom: 5px;
+  margin: 0;
   font-weight: 500;
 }
-.menu__card .menu__sub-price {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.menu__card .menu__sub-price .menu__card-subtitle {
+.menu__card--food .menu__card-subtitle {
   font-size: 15px;
-}
-.menu__card .menu__sub-price .menu__sub-price--price {
+  padding-top: 0;
   margin: 0;
-  padding: 0;
+  font-weight: 300;
 }
-
-.btn-order {
+.menu__card--price {
+  padding-top: 25px;
+  padding-right: 10px;
+}
+.menu__card--chose {
+  display: block;
+  transition-property: all;
+  transition-duration: 1000ms;
+}
+.menu__card--chose .fa-circle-check {
+  display: none;
+  color: rgb(255, 255, 255);
+}
+.menu__card:hover .menu__card--chose {
+  position: relative;
   display: flex;
   justify-content: center;
-  margin: 40px;
+  align-items: center;
+  height: 72px;
+  padding: 25px;
+  border-radius: 0 15px 15px 0;
+  background-color: rgb(153, 226, 208);
+  transform: translateX(0);
+}
+.menu__card:hover .menu__card--chose .fa-circle-check {
+  display: block;
+}
+
+/* Fade In menu */
+.menu__first {
+  animation: fadein 500ms ease-in 150ms both;
+}
+
+.menu__secund {
+  animation: fadein 500ms ease-in 700ms both;
+}
+
+.menu__third {
+  animation: fadein 500ms ease-in 1200ms both;
 }
 
 .btn {
   color: rgb(246, 246, 246);
-  background: rgb(147, 86, 220);
   background: linear-gradient(353deg, rgb(147, 86, 220) 43%, rgb(255, 121, 218) 100%);
   padding: 15px 20px;
   margin-top: 10px;
@@ -280,6 +357,33 @@ a {
   border-radius: 25px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
   cursor: pointer;
+  min-width: 180px;
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+}
+.btn:hover::after {
+  opacity: 1;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(353deg, #a16be0 43%, #ff93e1 100%);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  z-index: -1;
+  border-radius: 25px;
+  transition: opacity 250ms;
+}
+
+.btn-order {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
 }
 
 .newtag {
@@ -300,6 +404,55 @@ a {
 .newtag .newtag__txt {
   color: #008766;
   font-size: 14px;
+}
+
+.loader {
+  position: absolute;
+  background: rgb(246, 246, 246);
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader 3000ms 150ms both;
+}
+.loader--spin {
+  border: 25px solid rgb(255, 121, 218);
+  border-radius: 50%;
+  border-top: 32px solid rgb(147, 86, 220);
+  width: 150px;
+  height: 150px;
+  animation: spin 700ms linear 150ms infinite both;
+}
+
+.fa-heart {
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.heart {
+  position: relative;
+}
+.heart i {
+  cursor: pointer;
+  font-size: 25px;
+  position: absolute;
+}
+.heart--filled {
+  opacity: 0;
+  transition: opacity 1000ms ease-in-out;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+.heart--filled:hover {
+  opacity: 1;
+  background-position: 0% 100%;
+  background-image: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
+  transition: opacity 1000ms ease-in-out;
 }
 
 .restaurant-cards {
@@ -342,23 +495,24 @@ a {
 .card__card-content {
   padding: 25px;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   height: 77px;
   background-color: white;
   align-items: center;
   border-radius: 0 0 20px 20px;
 }
-
-.card-content__card-txt .card-txt__card-title {
+.card__card-content .card-content__card-txt .card-txt__card-title {
   padding-bottom: 5px;
   margin: 0;
 }
-.card-content__card-txt .card-txt__card-subtitle {
+.card__card-content .card-content__card-txt .card-txt__card-subtitle {
   padding: 0;
   margin: 0;
   font-size: 17px;
   font-weight: 300;
+}
+.card__card-content .heart {
+  margin: 0 25px 25px 0;
 }
 
 .header__logo {
@@ -368,20 +522,21 @@ a {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
-.header__place {
+/* HERO */
+.location {
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-color: #EAEAEA;
   padding: 20px;
 }
-.header__place p {
+.location p {
   margin: 0;
   padding-left: 15px;
   color: rgb(53, 53, 53);
 }
 
-.hero, .restaurants {
+.hero, .background-restaurants {
   background-color: rgb(246, 246, 246);
 }
 
@@ -406,6 +561,7 @@ a {
   margin: 0;
 }
 
+/* HOW TO SECTION */
 @media (min-width: 768px) {
   .how-to, .restaurants {
     padding-left: 70px;
@@ -414,8 +570,8 @@ a {
 }
 @media (min-width: 1024px) {
   .how-to, .restaurants {
-    padding-left: auto;
-    padding-right: auto;
+    max-width: 1160px;
+    margin: auto;
   }
 }
 
@@ -427,19 +583,25 @@ a {
 @media (min-width: 1024px) {
   .how-to__container {
     flex-direction: row;
-    gap: 20px;
+    justify-content: space-between;
+    gap: 30px;
   }
 }
 
 .how-to__box {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  flex-basis: 33%;
   margin: 25px 0;
 }
 .how-to__box--nb {
   color: rgb(246, 246, 246);
   background-color: rgb(147, 86, 220);
-  padding: 10px 15px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding-top: 5px;
   border-radius: 50%;
   z-index: 1;
   margin-right: -10px;
@@ -451,7 +613,8 @@ a {
   align-items: center;
   padding: 15px;
   background-color: rgb(246, 246, 246);
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
   height: 72px;
   border-radius: 20px;
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
